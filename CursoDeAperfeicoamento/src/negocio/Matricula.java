@@ -75,7 +75,6 @@ public class Matricula {
 		this.turma = turma;
 	}
 
-	@Override
 	public String toString() {
 		return "Matricula do aluno " + aluno + ", o valorPago foi de R$ " + valorPago + 
 				" referente ao curso " + curso.getNome();

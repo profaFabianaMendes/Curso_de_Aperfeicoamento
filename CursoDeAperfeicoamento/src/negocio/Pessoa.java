@@ -2,8 +2,8 @@ package negocio;
 
 public abstract class Pessoa {
 	protected String nome;
-	protected int numID;
-	protected int CPF; 
+	protected String numID;
+	protected String CPF; 
 	protected String numTel;
 
 	public String getNome() {
@@ -16,22 +16,22 @@ public abstract class Pessoa {
 	}
 
 
-	public int getNumID() {
+	public String getNumID() {
 		return numID;
 	}
 
 
-	public void setNumID(int numID) {
+	public void setNumID(String numID) {
 		this.numID = numID;
 	}
 
 
-	public int getCPF() {
+	public String getCPF() {
 		return CPF;
 	}
 
 
-	public void setCPF(int cPF) {
+	public void setCPF(String cPF) {
 		CPF = cPF;
 	}
 
@@ -43,6 +43,10 @@ public abstract class Pessoa {
 
 	public void setNumTel(String numTel) {
 		this.numTel = numTel;
+	}
+	
+	public String toString() {
+		return "to do";
 	}
 
 }

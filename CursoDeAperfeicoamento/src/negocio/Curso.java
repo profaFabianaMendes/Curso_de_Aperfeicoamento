@@ -20,10 +20,6 @@ public class Curso {
 		valor = val;
 		numAlunos = total;
 	}
-	
-	public String toString() {
-		return "Nome do curso: " + nome + ", valor do Curso:" + valor;
-	}
 
 	public Matricula[] getMatriculas() {
 		return this.alunosMatriculados;
@@ -120,6 +116,10 @@ public class Curso {
 
 	public void setValor(double valor) {
 		this.valor = valor;
+	}
+	
+	public String toString() {
+		return "Nome do curso: " + nome + ", valor do Curso:" + valor;
 	}
 	
 	public String listarAlunosMatriculados() {

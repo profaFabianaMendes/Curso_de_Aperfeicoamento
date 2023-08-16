@@ -8,20 +8,6 @@ public class Professor extends Pessoa {
 		valorHoraAula = v;
 		numTel = t;
 	}
-	
-		public String toString() {
-		return "Nome d@ professor@: " + nome + ", valor da hora/aula: R$" + valorHoraAula;
-	}
-
-
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
 
 	public double getValorHoraAula() {
 		return valorHoraAula;
@@ -29,6 +15,10 @@ public class Professor extends Pessoa {
 
 	public void setValorHoraAula(double valorHoraAula) {
 		this.valorHoraAula = valorHoraAula;
+	}
+	
+	public String toString() {
+		return "Nome do professor: " + nome + ", valor da hora/aula: R$" + valorHoraAula;
 	}
 
 	

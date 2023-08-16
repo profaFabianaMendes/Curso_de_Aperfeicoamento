@@ -8,37 +8,7 @@ public class Aluno extends Pessoa {
 		nome = n;
 		endereco = e;
 	}
-	
 
-	public String toString() {	
-		return "Nome do aluno: " + nome;
-	}
-
-
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public int getNumID() {
-		return numID;
-	}
-
-	public void setNumID(int numID) {
-		this.numID = numID;
-	}
-
-	public int getCPF() {
-		return CPF;
-	}
-
-	public void setCPF(int cPF) {
-		CPF = cPF;
-	}
 
 	public String getDataNasc() {
 		return dataNasc;
@@ -54,6 +24,10 @@ public class Aluno extends Pessoa {
 
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
+	}
+	
+	public String toString() {	
+		return "Nome do aluno: " + nome;
 	}
 	
 
