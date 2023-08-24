@@ -21,8 +21,6 @@ public class Dados {
 		
 	}
 	
-	
-	
 	public void preencherDados() {
 		for(int i = 0; i < 10; i++) {
 			String s = String.valueOf(i);
