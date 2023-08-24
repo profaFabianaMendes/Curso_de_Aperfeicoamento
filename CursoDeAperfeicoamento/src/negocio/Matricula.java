@@ -5,24 +5,14 @@ public class Matricula {
 	private Aluno aluno;
 	private String data;
 	private double valorPago;
-	private Curso curso;
 	private String turma;
 	
 	
-	public Matricula(Aluno a, String d, double v, Curso c, String t) {
+	public Matricula(Aluno a, String d, double v, String t) {
 		aluno = a; 
 		data = d;
 		valorPago = v;
-		curso = c; 
 		turma = t;
-	}
-
-	public void matricular() {
-		int qtd;
-		Curso c = this.getCurso();
-		qtd = c.getNumAlunos();
-		c.setAluno(this, qtd);
-		c.setNumAlunos(qtd+1);
 	}
 
 
@@ -56,16 +46,6 @@ public class Matricula {
 	}
 
 
-	public Curso getCurso() {
-		return curso;
-	}
-
-
-	public void setCurso(Curso curso) {
-		this.curso = curso;
-	}
-
-
 	public String getTurma() {
 		return turma;
 	}
@@ -76,8 +56,7 @@ public class Matricula {
 	}
 
 	public String toString() {
-		return "Matricula do aluno " + aluno + ", o valorPago foi de R$ " + valorPago + 
-				" referente ao curso " + curso.getNome();
+		return "Matricula do aluno " + aluno + ", o valorPago foi de R$ " + valorPago;
 	}
 
 	

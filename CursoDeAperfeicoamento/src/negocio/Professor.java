@@ -3,10 +3,12 @@ package negocio;
 public class Professor extends Pessoa {
 	private double valorHoraAula;
 	
-	public Professor(String n, double v, String t) {
+	public Professor(String n,  String id,  String cpf, String tel,  double v) {
 		nome = n;
-		valorHoraAula = v;
-		numTel = t;
+		numID = id;
+		this.cpf = cpf; 
+		numTel = tel;
+		valorHoraAula = v;	
 	}
 
 	public double getValorHoraAula() {

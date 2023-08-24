@@ -3,7 +3,7 @@ package negocio;
 public abstract class Pessoa {
 	protected String nome;
 	protected String numID;
-	protected String CPF; 
+	protected String cpf; 
 	protected String numTel;
 
 	public String getNome() {
@@ -27,12 +27,12 @@ public abstract class Pessoa {
 
 
 	public String getCPF() {
-		return CPF;
+		return cpf;
 	}
 
 
 	public void setCPF(String cPF) {
-		CPF = cPF;
+		cpf = cPF;
 	}
 
 

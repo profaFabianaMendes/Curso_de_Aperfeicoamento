@@ -12,13 +12,13 @@ public class Curso {
 	private Professor prof;
 	private double valor;
 	private Matricula[] alunosMatriculados = new Matricula[40];
-	private int numAlunos = 0;
+	private int numAlunos;
 	
-	public Curso(String n, String cont, double val, int total) {
+	public Curso(String n, String cont, double val, Professor p) {
 		nome = n;
 		conteudoProg = cont;
 		valor = val;
-		numAlunos = total;
+		numAlunos = 0;
 	}
 
 	public Matricula[] getMatriculas() {
@@ -120,6 +120,17 @@ public class Curso {
 	
 	public String toString() {
 		return "Nome do curso: " + nome + ", valor do Curso:" + valor;
+	}
+	
+	public boolean matricular(Matricula m) {
+		if(numAlunos < 40) {
+			alunosMatriculados[numAlunos] = m;
+			numAlunos++;
+			return true;
+		} else {
+			return false;
+		}
+		
 	}
 	
 	public String listarAlunosMatriculados() {
