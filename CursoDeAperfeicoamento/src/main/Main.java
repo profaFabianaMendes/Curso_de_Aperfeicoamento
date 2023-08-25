@@ -12,6 +12,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		int op = -1;
+		int aux;
 		d.preencherDados();
 		while(op != 0) {
 			System.out.print(imprimirMenu());
@@ -27,7 +28,11 @@ public class Main {
 					removerAluno();
 					break;
 				case 3: 
-					editarAluno();
+					System.out.println("Escolha um dos alunos a seguir para editar as informacoes:\n");
+					listarAlunos();
+					aux = in.nextInt();
+					Aluno a = lerDadosAluno();
+					editar(aux, a);
 					break;
 				case 4: 
 					listarAlunos();
@@ -39,7 +44,11 @@ public class Main {
 					removerProfessor();
 					break;
 				case 7: 
-					editarProfessor();
+					System.out.println("Escolha um dos professores a seguir para editar as informacoes:\n");
+					listarProfessores();
+					aux = in.nextInt();
+					Professor p = lerDadosProfessor();
+					editar(aux, p);
 					break;
 				case 8: 
 					listarProfessores();
@@ -123,13 +132,8 @@ public class Main {
 			d.setAluno(i, d.getAluno(i+1));
 	}
 	
-	public static void editarAluno() {
-		System.out.println("Escolha um dos alunos a seguir para editar as informacoes:\n");
-		listarAlunos();
-		int i = in.nextInt();
-		Aluno a;
+	public static void editar(int i, Aluno a) {
 		if(i < d.getnAlunos() && i >= 0) {
-			a = lerDadosAluno();
 			d.setAluno(i, a);
 			System.out.println("Dados editados com sucesso");
 		} else {
@@ -141,8 +145,9 @@ public class Main {
 		in.nextLine(); //esvazia dados do teclado
 		for(int i = 0; i < d.getnAlunos(); i++) 
 			System.out.println(i + " -> " + d.getAlunos()[i].toString());
-		// Na linha a seguir é mostrada a lista de alunos com interface gráfica
-		// new TelaListagem(d.getNomeAlunos());
+		/* Descomente a linha a seguir para ver a listagem dos alunos em interface gráfica
+		 * new TelaListagem(d.getNomeAlunos());
+		 */
 	}
 	
 	public static boolean cadastrarProfessor() {
@@ -198,13 +203,8 @@ public class Main {
 			d.setProfessor(i, d.getProfessor(i+1));
 	}
 	
-	public static void editarProfessor() {
-		System.out.println("Escolha um dos professores a seguir para editar as informacoes:\n");
-		listarProfessores();
-		int i = in.nextInt();
-		Professor p;
+	public static void editar(int i, Professor p) {
 		if(i < d.getnProfs() && i >= 0) {
-			p = lerDadosProfessor();
 			d.setProfessor(i, p);
 			System.out.println("Dados editados com sucesso");
 		} else {
@@ -213,10 +213,11 @@ public class Main {
 	}
 	
 	public static void listarProfessores() {
-		//for(int i = 0; i < d.getnProfs(); i++) 
-			//System.out.println(i + " -> " + d.getProfessores()[i].toString());
-		// Na linha a seguir é mostrada a lista de alunos com interface gráfica
-		// new TelaListagem(d.getNomeProfessores());
+		for(int i = 0; i < d.getnProfs(); i++) 
+			System.out.println(i + " -> " + d.getProfessores()[i].toString());
+		/* Descomente a linha a seguir para ver a listagem dos professores em interface gráfica
+		 * new TelaListagem(d.getNomeProfessores());
+		 */
 	}
 	
 }
