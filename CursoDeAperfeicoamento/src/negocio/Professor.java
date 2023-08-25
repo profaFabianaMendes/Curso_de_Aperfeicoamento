@@ -20,7 +20,7 @@ public class Professor extends Pessoa {
 	}
 	
 	public String toString() {
-		return "Nome do professor: " + nome + ", valor da hora/aula: R$" + valorHoraAula;
+		return nome;
 	}
 
 	

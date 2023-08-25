@@ -32,7 +32,7 @@ public class Aluno extends Pessoa {
 	}
 	
 	public String toString() {	
-		return "Nome do aluno: " + nome;
+		return nome;
 	}
 	
 

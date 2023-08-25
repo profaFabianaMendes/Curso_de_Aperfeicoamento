@@ -3,24 +3,144 @@ package dados;
 import negocio.*;
 
 public class Dados {
-	Aluno[] alunos;
-	int nAlunos = 0;
-	Professor[] professores ;
-	int nProfs = 0;
-	Curso[] cursos;
-	int nCursos = 0;
-	Matricula[] matriculas;
-	int nMatriculas = 0;
+	private Aluno[] alunos;
+	private int nAlunos = 0;
+	private Professor[] professores ;
+	private int nProfs = 0;
+	private Curso[] cursos;
+	private int nCursos = 0;
+	private Matricula[] matriculas;
+	private int nMatriculas = 0;
 	
 	public Dados() {
-		
 		alunos = new Aluno[100];
 		professores = new Professor[50];
 		cursos = new Curso[50];
-		preencherDados();
-		
 	}
 	
+	
+	
+	public Aluno[] getAlunos() {
+		return alunos;
+	}
+	
+	public Aluno getAluno(int i) {
+		return alunos[i];
+	}
+
+	public String[] getNomeAlunos() {
+		String[] s = new String[nAlunos];
+		for(int i = 0; i < nAlunos; i++) {
+			s[i] = alunos[i].getNome();
+		}
+		return s;
+	}
+	
+	public void setAlunos(Aluno[] alunos) {
+		this.alunos = alunos;
+	}
+	
+	public void setAluno(int i, Aluno a) {
+		alunos[i] = a;
+	}
+
+	public int getnAlunos() {
+		return nAlunos;
+	}
+
+	public void setnAlunos(int nAlunos) {
+		this.nAlunos = nAlunos;
+	}
+
+	public Professor[] getProfessores() {
+		return professores;
+	}
+	
+	public Professor getProfessor(int i) {
+		return professores[i];
+	}
+
+	public String[] getNomeProfessores() {
+		String[] s = new String[nProfs];
+		for(int i = 0; i < nProfs; i++) {
+			s[i] = professores[i].getNome();
+		}
+		return s;
+	}
+
+
+	public void setProfessores(Professor[] professores) {
+		this.professores = professores;
+	}
+	
+	public void setProfessor(int i, Professor p) {
+		professores[i] = p;
+	}
+
+	public int getnProfs() {
+		return nProfs;
+	}
+
+
+
+	public void setnProfs(int nProfs) {
+		this.nProfs = nProfs;
+	}
+
+	public Curso[] getCursos() {
+		return cursos;
+	}
+	
+	public Curso getCurso(int i) {
+		return cursos[i];
+	}
+
+	public void setCursos(Curso[] cursos) {
+		this.cursos = cursos;
+	}
+	
+	public void setCurso(int i, Curso c) {
+		cursos[i] = c;
+	}
+	
+	public int getnCursos() {
+		return nCursos;
+	}
+
+	public void setnCursos(int nCursos) {
+		this.nCursos = nCursos;
+	}
+
+	public Matricula[] getMatriculas() {
+		return matriculas;
+	}
+	
+	public Matricula getMatricula(int i) {
+		return matriculas[i];
+	}
+
+	public void setMatriculas(Matricula[] matriculas) {
+		this.matriculas = matriculas;
+	}
+	
+	public void setMatricula(int i, Matricula m) {
+		matriculas[i] = m;
+	}
+
+
+
+	public int getnMatriculas() {
+		return nMatriculas;
+	}
+
+
+
+	public void setnMatriculas(int nMatriculas) {
+		this.nMatriculas = nMatriculas;
+	}
+
+
+
 	public void preencherDados() {
 		for(int i = 0; i < 10; i++) {
 			String s = String.valueOf(i);
@@ -31,7 +151,7 @@ public class Dados {
 			cursos[i] = new Curso("Curso".concat(s), "Conteudo".concat(s), i, professores[i]);
 			cursos[i].matricular(new Matricula(alunos[i], "hoje", i, "turma".concat(s) ));			
 		}
-		nAlunos = nProfs = nCursos;
+		nAlunos = nProfs = nCursos = 10;
 	}
 
 }
